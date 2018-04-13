@@ -261,13 +261,7 @@ p, .card-title {
     /* height: auto; */
 }
 
-
 img {
-    min-height: 0;
-    min-width: 0;
-}
-
-.search-images {
     min-height: 75px;
     min-width: 75px;
 }
@@ -329,20 +323,44 @@ div.card-body.chat {
     overflow: auto;
 }
 
-.itinerary2 {
-    display: none;
+.input-spaces {
+    width: 75%;
+    float: left;
 }
 
-
-#entry-id, #entry-chat {
-    width: 80%;
+#enter, #personalID {
+    width: 25%;
     float: left;
 }
 
 
+.x-buttons {
+    background-color: darkred;
+    padding: 0px 8px 0px 8px;
+    font-size: 26px;
+    margin: 8px 0px 0px 8px;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 5px;
 
+}
+.barsPicked {
+    color: white;
+}
 
+#itemField {
+    width: 75%;
+    float: left;
+}
 
+#add {
+    width: 25%;
+    float: left;
+}
 
-
+.crawl-name {
+    color: white;
+    font-family: 'Bowlby One SC', cursive;
+    font-size: 50px; 
+}
 

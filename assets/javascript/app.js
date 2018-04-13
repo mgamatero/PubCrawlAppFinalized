@@ -26,6 +26,7 @@ var coord = {
 var latLongCoord = []
 
 
+
 function initMap() {
 
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -45,13 +46,12 @@ function initMap() {
         var marker = new google.maps.Marker({
             position: latLng,
             map: map,
-            label: labels[i]
+            label: labels[labelIndex++ % labels.length]
         })
     }
 }
 
 $(document).ready(function () {
-
     $("#search-btn").on("click", function (event) {
         event.preventDefault();
         var returnedBarArray = []
@@ -300,11 +300,16 @@ $(document).ready(function () {
             //Click event that transfers bar search results as a google map marker and to pub list
             $(".addMeToCrawl").on("click", function () {
                 var imABarAndAddMeToList = returnedBarArray[$(this).attr("dataIndex")].barName
-
+                suggestionsBox.push({
+                    user: user,
+                    group: crawlSync,
+                    suggestion: imABarAndAddMeToList,
+                    randomID: Math.random().toString(36).slice(-8)
+                })
 
                 //append to Suggested Bar List
                 $("#itinerary-title").text("Your Crawl:")
-                $('ol').append("<li class='barsPicked' type='A' dataIndex = " + $(this).attr('dataIndex') + ">" + imABarAndAddMeToList + "</li>")
+                $('ol').append("<li class='barsPicked' dataIndex = " + $(this).attr('dataIndex') + ">" + imABarAndAddMeToList + "</li>")
 
                //master
                 //append to Suggested Bar List
